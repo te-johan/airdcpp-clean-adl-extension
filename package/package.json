@@ -1,0 +1,27 @@
+{
+  "name": "airdcpp-example-python-extension",
+  "version": "0.0.1",
+  "description": "Example Python 3.x extension for AirDC++",
+  "license": "MIT",
+	"private": true,
+  "author": "maksis",
+  "engines": {
+    "python": ">=3.5.0"
+  },
+  "keywords": [
+    "airdcpp",
+    "airdcpp-extensions",
+    "airdcpp-extensions-test",
+		"python"
+  ],
+  "bugs": "https://github.com/airdcpp-web/airdcpp-example-python-extension/issues/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/airdcpp-web/airdcpp-example-python-extension/"
+  },
+  "main": "extension.py",
+  "airdcpp": {
+    "apiVersion": 1,
+    "minApiFeatureLevel": 0
+  }
+}
