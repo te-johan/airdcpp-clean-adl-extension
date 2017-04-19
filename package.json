@@ -1,12 +1,12 @@
 {
   "name": "airdcpp-example-python-extension",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Example Python 3.x extension for AirDC++",
   "license": "MIT",
   "private": true,
   "author": "maksis",
   "engines": {
-    "python": ">=3.5.0"
+    "python3": ">=3.5.0"
   },
   "keywords": [
     "airdcpp",
