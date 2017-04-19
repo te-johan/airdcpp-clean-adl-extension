@@ -16,6 +16,8 @@ parser.add_argument("--name", help="Extension name")
 parser.add_argument("--authToken", help="API session token")
 parser.add_argument("--settingsPath", help="Setting directory")
 parser.add_argument("--logPath", help="Log directory")
+parser.add_argument("--debug", help="Enable debug mode", dest='debug', action='store_true')
+parser.set_defaults(debug=False)
 
 args = parser.parse_args()
 
