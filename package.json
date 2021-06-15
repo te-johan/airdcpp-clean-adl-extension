@@ -1,23 +1,22 @@
 {
-  "name": "airdcpp-example-python-extension",
-  "version": "0.0.2",
-  "description": "Example Python 3.x extension for AirDC++",
+  "name": "airdcpp-clean-adl-extension",
+  "version": "0.0.1",
+  "description": "clean adl search",
   "license": "MIT",
   "private": true,
-  "author": "maksis",
+  "author": "unknown",
   "engines": {
     "python3": ">=3.5.0"
   },
   "keywords": [
     "airdcpp",
-    "airdcpp-extensions",
-    "airdcpp-extensions-test",
+    "airdcpp-clean-adl",
     "python"
   ],
-  "bugs": "https://github.com/airdcpp-web/airdcpp-example-python-extension/issues/",
+  "bugs": "fix them",
   "repository": {
     "type": "git",
-    "url": "https://github.com/airdcpp-web/airdcpp-example-python-extension/"
+    "url": "none"
   },
   "main": "extension.py",
   "airdcpp": {
