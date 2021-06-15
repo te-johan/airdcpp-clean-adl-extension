@@ -2,11 +2,9 @@ import argparse
 import json
 import threading
 import time
+import subprocess
 
 import urllib.request
-
-
-# Spam a test message to event log once per minute
 
 # Arguments
 parser = argparse.ArgumentParser()
@@ -33,9 +31,20 @@ postRequest = urllib.request.Request('http://' + args.apiUrl + 'events')
 postRequest.add_header('Authorization', args.authToken)
 postRequest.add_header('Content-Type', 'application/json')
 
-# Sending
-def sendmessage():
-	threading.Timer(60.0, sendmessage).start()
-	response = urllib.request.urlopen(postRequest, json.dumps(message).encode('utf-8'))
+# calling adlchecker.py
+def check_adl():
+	adlfile = args.settingsPath + "/../../../" + "adlchecker.py"
+	config = args.settingsPath + "/../../../"
+	threading.Timer(60 * 60 * 24, check_adl).start()
+	process = subprocess.run(["python3", adlfile, "--config", config], capture_output=True)
+	stdout_as_str = process.stdout.decode("utf-8")
+	if "Matched:      0 entries" in stdout_as_str:
+		message['text'] = "ADL done, no warnings."
+		response = urllib.request.urlopen(postRequest, json.dumps(message).encode('utf-8'))
+	else:
+		for line in stdout_as_str.splitlines():
+			message['text'] = line
+			response = urllib.request.urlopen(postRequest, json.dumps(message).encode('utf-8'))
 
-sendmessage()
+
+check_adl()
